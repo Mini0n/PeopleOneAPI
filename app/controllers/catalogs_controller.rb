@@ -1,25 +1,26 @@
 class CatalogsController < ApplicationController
+  include Response
 
   before_action :set_catalog, only: [:show, :update, :destroy]
 
   #GET all
   def index
     @catalogs = Catalog.all
-    # json_response(@catalogs)
-    render json: @catalogs
+    json_response(@catalogs)
+    # render json: @catalogs
   end
 
   #POST create
   def create
     @catalog = Catalog.create!(catalog_params)
-    # json_response(@catalog, :created)
-    render json: @catalog
+    json_response(@catalog, :created)
+    # render json: @catalog
   end
 
   #GET 1 catalog/:id
   def show
-    # json_response(@catalog)
-    render json: @catalog
+    json_response(@catalog)
+    # render json: @catalog
   end
 
   #PUT update :id
