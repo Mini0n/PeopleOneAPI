@@ -7,8 +7,10 @@ Rails.application.routes.draw do
     end
   end
 
-  # resources :areas do
-  #   resources :items
-  # end
+  # get "/pages/:page" => "pages#show"
+
+  # root "public/front.html"
+
+  get '/', :to => redirect('/front.html')
 
 end
