@@ -22,6 +22,9 @@
 ### Database creation
   run rails db:migrate to create DB (MySQL).
 
+### Database initialization
+  execute .sql files from the /sqlfiles folder to load some values into the generated tables
+
 ### Running application
   run rails s to initiate the Rails server.
 
