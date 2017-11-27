@@ -1,21 +1,21 @@
-var catalogsURL = 'http://localhost:3000/catalogs/';
+var catsURL = 'http://localhost:3000/catalogs/';
 
 function getCatalogs(){
-  $.get(catalogsURL, function(data, status){
+  $.get(catsURL, function(data, status){
     console.log(data);
     console.log(status);
   });
 }
 
 function getCatalog(id){
-  $.get(catalogsURL+id, function(data, status){
+  $.get(catsURL+id, function(data, status){
     console.log(data);
     console.log(status);
   });
 }
 
 function createCatalog(name){
-  $.post(catalogsURL,
+  $.post(catsURL,
     { name: ''+name },
   function(data, status){
       console.log(data);
@@ -25,7 +25,7 @@ function createCatalog(name){
 
 function updateCatalog(id, newName){
   $.ajax({
-    url: catalogsURL + id,
+    url: catsURL + id,
     type: 'PUT',
     data: { name: newName },
     success: function(result) {
@@ -37,7 +37,7 @@ function updateCatalog(id, newName){
 
 function deleteCatalog(id){
   $.ajax({
-    url: catalogsURL + id,
+    url: catsURL + id,
     type: 'DELETE',
     success: function(result) {
       console.log('catalog '+id+' deleted');
@@ -46,7 +46,8 @@ function deleteCatalog(id){
 }
 
 
-getCatalog(1);
+// getCatalogs();
+// getCatalog(1);
 // createCatalog('Pupe');
 // deleteCatalog(8);
-updateCatalog(7, 'new PUPE');
+// updateCatalog(7, 'new PUPE');
