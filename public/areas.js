@@ -47,8 +47,8 @@ function deleteArea(catId, id){
 }
 
 
-getAreas(1);
-getArea(1,1);
+// getAreas(1);
+// getArea(1,1);
 // createArea(1, 'new area');
 // updateArea(1,4,'new name edited');
-deleteArea(1,4);
+// deleteArea(1,4);
