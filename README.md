@@ -6,20 +6,16 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
-
-* System dependencies
+  ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
+* Rails version
+  Rails 5.1.4
 
 * Configuration
+  Clone repository
+  In the code folder run bundle install to install gems
 
 * Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+  run rails db:migrate to create DB (MySQL)
 
 * ...
 # PeopleOneAPI
