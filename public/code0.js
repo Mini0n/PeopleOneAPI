@@ -1,5 +1,12 @@
 console.log('code0 loaded');
 
+var catalogsArrayTable = [];
+var areasArrayTable = [];
+var ItemsArrayTable = [];
+var catalogsArrayTableObj = [];
+var areasArrayTableObj = [];
+var ItemsArrayTableObj = [];
+
 function setActiveLink(){
   $('#links').children().removeClass('active');
   $(event.target).parent().addClass('active');
@@ -37,11 +44,11 @@ function readEverything(){
   var time = setTimeout(function(){
     clearTimeout(time);
     // console.log(everythingArray);
-    buildRows();
+    buildAllRows();
   }, 1500);
 }
 
-function buildRows(){
+function buildAllRows(){
   var tempRow = {};
   everythingArray.forEach(catalog => {
    tempRow.catalog = catalog.name;
@@ -56,6 +63,41 @@ function buildRows(){
 }
 
 
+
+
+function cleanTable(){
+  $('#table-body').html('');
+}
+
+
+
+function hideAll(){
+  $('.catalog-cell').hide();
+  $('.area-cell').hide();
+  $('.item-cell').hide();
+}
+
+function showAll(){
+  cleanTable();
+  buildAllRows();
+  $('.catalog-cell').show();
+  $('.area-cell').show();
+  $('.item-cell').show();
+  
+}
+
+function showCatalogs(){ 
+  hideAll();
+  $('.catalog-cell').show(); 
+}
+function showAreas(){
+  hideAll(); 
+  $('.area-cell').show(); 
+}
+function showItems(){
+  hideAll();
+  $('.item-cell').show();
+}
 
 
 var testRow = {catalog:'prueba',area:'area51',item:'alien'};
