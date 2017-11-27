@@ -36,9 +36,26 @@ function readEverything(){
   var cats = getEverything();
   var time = setTimeout(function(){
     clearTimeout(time);
-    console.log(everythingArray);
+    // console.log(everythingArray);
+    buildRows();
   }, 1500);
 }
+
+function buildRows(){
+  var tempRow = {};
+  everythingArray.forEach(catalog => {
+   tempRow.catalog = catalog.name;
+   catalog.areas.forEach(area => {
+    tempRow.area = area.name;
+    area.items.forEach(item => {
+      tempRow.item = item.name;
+      addRow(tempRow);
+    });
+   });
+  });
+}
+
+
 
 
 var testRow = {catalog:'prueba',area:'area51',item:'alien'};
@@ -46,8 +63,8 @@ var row2 = createRowObject('algo','algo2','algo3');
 // console.log(row2);
 
 // console.log(testRow);
-addRow(testRow);
-addRow(row2);
+// addRow(testRow);
+// addRow(row2);
 
 // readCatalogs();
 
