@@ -1,11 +1,12 @@
 console.log('code0 loaded');
 
-var catalogsArrayTable = [];
-var areasArrayTable = [];
-var ItemsArrayTable = [];
-var catalogsArrayTableObj = [];
-var areasArrayTableObj = [];
-var ItemsArrayTableObj = [];
+// var catalogsArrayTable = [];
+// var areasArrayTable = [];
+// var ItemsArrayTable = [];
+// var catalogsArrayTableObj = [];
+// var areasArrayTableObj = [];
+// var ItemsArrayTableObj = [];
+var everythingArrayObj = [];
 
 function setActiveLink(){
   $('#links').children().removeClass('active');
@@ -13,10 +14,10 @@ function setActiveLink(){
 }
 
 //rowInfo {catalog, area, item}
-function addRow(rowInfo){
-  var ro1 = '<tr><td class="catalog-cell">'+rowInfo.catalog+'</td>';
-  var ro2 = '<td class="area-cell">'+rowInfo.area+'</td>';
-  var ro3 = '<td class="item-cell">'+rowInfo.item+'</td></tr>';
+function addRow(rowInfo, objIndex){
+  var ro1 = '<tr><td class="catalog-cell" catalog-id="'+objIndex+'">'+rowInfo.catalog+'</td>';
+  var ro2 = '<td class="area-cell" area-id="'+objIndex+'">'+rowInfo.area+'</td>';
+  var ro3 = '<td class="item-cell" item-id="'+objIndex+'">'+rowInfo.item+'</td></tr>';
   var row = ro1+ro2+ro3;
   var table = $('#table-body');
   table.append(row);
@@ -50,19 +51,46 @@ function readEverything(){
 
 function buildAllRows(){
   var tempRow = {};
+  cleanTable();
   everythingArray.forEach(catalog => {
    tempRow.catalog = catalog.name;
+   tempRow.catId = catalog.id;
    catalog.areas.forEach(area => {
     tempRow.area = area.name;
+    tempRow.areaId = area.id;
     area.items.forEach(item => {
       tempRow.item = item.name;
-      addRow(tempRow);
+      tempRow.itemId = item.id
+      everythingArrayObj.push(Object.assign({},tempRow));
+      addRow(tempRow,everythingArrayObj.length-1);
     });
    });
   });
 }
 
+function searchTable(){
+  var val = $('#search-input').val();
+  // console.log(val);
+  search(val);
+}
 
+function search(text){
+  var tempArray = [];
+  everythingArrayObj.forEach(obj => {
+    var str = JSON.stringify(obj);
+    if (str.toLowerCase().includes(text.toLowerCase())){ tempArray.push(obj); }
+  });
+  // return tempArray;
+  console.log(tempArray);
+  buildArrayRows(tempArray);
+}
+
+function buildArrayRows(objArray){
+  cleanTable();
+  objArray.forEach(obj => {
+    addRow(obj);
+  });
+}
 
 
 function cleanTable(){
