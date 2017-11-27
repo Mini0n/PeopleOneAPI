@@ -4,9 +4,107 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">  
+  <title>PeopleOne</title>
 </head>
 <body>
-  <pre>ola k ase; Front End</pre>
+  <!-- <pre>ola k ase; Front End</pre> -->
+
+
+<!-- NAVBAR  -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">PeopleOne</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul id="links" class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" onclick="setActiveLink();" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" onclick="setActiveLink();" href="#">All</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" onclick="setActiveLink();" href="#">Catalogs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" onclick="setActiveLink();" href="#">Areas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" onclick="setActiveLink();" href="#">Items</a>
+      </li>
+      
+
+
+
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+
+<!-- NAVBAR ENDS -->
+
+
+
+
+
+  <table class="table table-sm table-dark">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th class="catalog-cell" scope="col">Catalog</th>
+        <th class="area-cell" scope="col">Area</th>
+        <th class="item-cell" scope="col">Item</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td class="catalog-cell">Mark</td>
+        <td class="area-cell">Otto</td>
+        <td class="item-cell">@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td class="catalog-cell">Jacob</td>
+        <td class="area-cell">Thornton</td>
+        <td class="item-cell">@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td class="catalog-cell">Larry</td>
+        <td class="area-cell">the Bird</td>
+        <td class="item-cell">@twitter</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+
+
+
+
+
+  <!-- Bootstrap scripts -->
+  <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <!-- bootstrap scripts end -->
+  <!-- my scripts -->
+  <script src="code0.js" ></script>
+  <script src="catalogs.js"></script>
+
 </body>
+
 </html>
