@@ -2,9 +2,9 @@
 
 ## Architecture:
 
-* RESTful API build in Ruby on Rails.
+* RESTful API built in Ruby on Rails.
 * Information CRUD in MySQL
-* Front end in RoR application /public folder
+* Front end inside the RoR application /public folder [JQuery, JS and Bootstrap 4]
 
 ## Configuration and Installation:
 
