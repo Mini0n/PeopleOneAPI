@@ -1,16 +1,28 @@
 var catsURL = 'http://localhost:3000/catalogs/';
+var catalogsArray = null;
+var catalogItem = null;
+var everythingArray = null;
+
+
+function getEverything(){
+  $.get(catsURL, function(data, status){
+    everythingArray = data;
+    console.log('getEverything');
+    everythingArray.forEach(cat => {
+      getAreasEverything(cat.id, cat);
+    });
+  });  
+}
 
 function getCatalogs(){
   $.get(catsURL, function(data, status){
-    console.log(data);
-    console.log(status);
+    catalogsArray = data;
   });
 }
 
 function getCatalog(id){
   $.get(catsURL+id, function(data, status){
-    console.log(data);
-    console.log(status);
+    catalogItem = data;
   });
 }
 
@@ -45,9 +57,10 @@ function deleteCatalog(id){
   });
 }
 
+getCatalogs();
 
 // getCatalogs();
 // getCatalog(1);
 // createCatalog('Pupe');
 // deleteCatalog(8);
-// updateCatalog(7, 'new PUPE');
+// updateCatalog(7, 'new Catalog');

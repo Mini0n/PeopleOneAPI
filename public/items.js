@@ -1,18 +1,25 @@
 var catsURL = 'http://localhost:3000/catalogs/';
 var arsURL = '/areas/';
 var itemsURL = '/items/';
+var itemsArray = null;
+var itemItem = null;
+
+function getItemsEverything(catId, areaId, area){
+  $.get(catsURL+catId+arsURL+areaId+itemsURL, function(data, status){
+    itemsArray = data;
+    area.items = itemsArray;
+  });
+}
 
 function getItems(catId, areaId){
   $.get(catsURL+catId+arsURL+areaId+itemsURL, function(data, status){
-    console.log(data);
-    console.log(status);
+    itemsArray = data;
   });
 }
 
 function getItem(catId, areaId, id){
   $.get(catsURL+catId+arsURL+areaId+itemsURL+id, function(data, status){
-    console.log(data);
-    console.log(status);
+    itemItem = data;
   });
 }
 
@@ -47,6 +54,14 @@ function deleteItem(catId, areaId, id){
   });
 }
 
+
+//========================================================
+
+function getAll(){
+
+}
+
+//========================================================
 
 // getItems(1,1);
 // getItem(1,1,1);
